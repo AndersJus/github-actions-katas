@@ -1,17 +1,14 @@
-name: Java CI
-on: push
+name: workflow
 jobs:
-  job1: 
+  job-1:
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
     uses: actions/checkout@v2
-  
-  jobs2:
+  job-2:
+    needs: job-1
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
     run: ci/build-app.sh
-      needs: job1
-  
   
  # my-job:
   #  runs-on: ubuntu-latest
