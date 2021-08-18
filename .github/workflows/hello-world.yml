@@ -10,18 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
     run: ci/build-app.sh
-      need: job1
+    needs: job1
   
   job3:
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
     run: ci/unit-test-app.sh
-      need: job2
+    needs: job2
   
   job4: 
     runs-on: ubuntu-latest
     container: gradle:6-jdk11
     uses: actions/uploda-artifact@v2
+    needs: job3
     with:
       name: Upload repo
       path: .
