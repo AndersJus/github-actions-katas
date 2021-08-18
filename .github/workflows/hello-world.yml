@@ -12,20 +12,7 @@ jobs:
     run: ci/build-app.sh
     needs: job1
   
-  job3:
-    runs-on: ubuntu-latest
-    container: gradle:6-jdk11
-    run: ci/unit-test-app.sh
-    needs: job2
   
-  job4: 
-    runs-on: ubuntu-latest
-    container: gradle:6-jdk11
-    uses: actions/uploda-artifact@v2
-    needs: job3
-    with:
-      name: Upload repo
-      path: .
  # my-job:
   #  runs-on: ubuntu-latest
    # container: gradle:6-jdk11
