@@ -1,4 +1,5 @@
 name: workflow
+on: push
 jobs:
   job-2:
     needs: job-1
