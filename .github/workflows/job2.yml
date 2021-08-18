@@ -1,8 +1,0 @@
-name: workflow
-on: push
-jobs:
-  job-2:
-    needs: job-1
-    runs-on: ubuntu-latest
-    container: gradle:6-jdk11
-    run: ci/build-app.sh
